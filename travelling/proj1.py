@@ -94,12 +94,19 @@ zipcodes = {
     "DC": 20500  # Washington DC
 }
 
-# Import CSV file into data frame
+# Import CSV file into data framein
 data = pd.read_csv("zip_codes.csv")
 
 # Opens the in file and stores the JSON obj as json_dict
-with open('in.json', 'r') as f:
-    in_dict = json.load(f)
+#ead_json = sys.stdin.read()
+#print(read_json)
+#in_dict = json.loads(read_json)
+
+# JSON file
+f = open('in.json', "r")
+
+# Reading from file
+in_dict = json.loads(f.read())
 
 # Storing the destinations in string variables
 start = in_dict["start"]
